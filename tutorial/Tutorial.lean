@@ -1155,34 +1155,6 @@ bad_thm funEtaBad :
   ∀ (α : Type) (β : Type) (g : α → α) (f : α → β), (fun x => f (g x)) = f :=
   fun _ _ _ f => unchecked Eq.refl f
 
-/--
-Corner case for function eta:
-Does a defeq between a partially applied recursor with rule k and a free
-variable trigger eta expansion?
-
-Taking the official kernel as the specification, the answer is no.
-See <https://github.com/leanprover/lean4/issues/12520> for a discussion.
--/
-bad_def etaRuleK : ∀ (a : true = true → Bool),
-  @Eq (true = true → Bool)
-    (@Eq.rec Bool true (fun _ _ => Bool) (a (Eq.refl true)) _)
-    a :=
-  fun a => unchecked Eq.refl a
-
-structure T where
-  val : Bool
-  proof : True
-
-/--
-Corner case for function eta:
-Does a defeq between a partially applied constructor trigger eta expansion?
-
-Taking the official kernel as the specification, the answer is no.
-See <https://github.com/leanprover/lean4/issues/12520> for a discussion.
--/
-bad_def etaCtor :
-  ∀ (x : True → T) , (T.mk (x True.intro).val) = x := fun x => unchecked Eq.refl x
-
 /-! Reflexive inductives -/
 
 /--
