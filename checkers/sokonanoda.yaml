@@ -7,7 +7,7 @@ description: |
   [smalltt](https://github.com/AndrasKovacs/smalltt).
 url: https://github.com/intgrah/sokonanoda
 ref: master
-rev: 7b51784fe4ec9b82bf7a20c71ba6bf803a4ed7c0
+rev: 28c03d0103e004610e4d47a4828965efb2b70af9
 build: |
   cat > config.json <<__END__
    {
