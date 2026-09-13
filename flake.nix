@@ -28,6 +28,7 @@
           gmp
           zig
           ghc
+          texlive.combined.scheme-basic
         ];
       };
     };
