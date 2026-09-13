@@ -86,7 +86,7 @@ build: bash tools/arena-build.sh
 # than the grace the handler needs to print DECLINE itself; either way -M did
 # its job, and neither is a judgement about the file.
 run: |
-  timeout 5400 ./arena/eink0rn --enforce-mutual-univ --mem=4000 -j8 "$IN" \
+  timeout 300 ./arena/eink0rn --enforce-mutual-univ --mem=4000 -j8 "$IN" \
     +RTS -A32m -M13g -RTS
   rc=$?
   case $rc in
